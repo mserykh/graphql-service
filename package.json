@@ -2,9 +2,9 @@
   "name": "graphql-service",
   "version": "1.0.0",
   "description": "Implement the service Musicify for managing and retrieving data for different entities.",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "ts-node src/index.ts"
   },
   "repository": {
     "type": "git",
