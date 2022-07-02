@@ -2,11 +2,17 @@
   "compilerOptions": {
     "target": "es2016",
     "module": "es6",
-    "outDir": "./dist",
+    "rootDir": "./src",
     "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./src",
     "noImplicitAny": true,
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "moduleResolution": "Node"
+  },
+  "ts-node": {
+    "esm": true
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
