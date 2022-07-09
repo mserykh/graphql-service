@@ -6,7 +6,11 @@ type User {
   email: String!
 }
 
+type JWT {
+  jwt: String
+}
+
 type Query {
-  users(limit: Int, offset: Int): [User]
   user(id: ID!): User
+  jwt(email: String!, password: String!): JWT
 }
