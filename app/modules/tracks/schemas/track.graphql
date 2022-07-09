@@ -14,9 +14,9 @@ type Query {
 }
 
 type Mutation {
-  createTrack(input: NewTrackInput): Track!
-  deleteTrack(id: ID!): DEL
-  updateTrack(id: ID!, input: TrackInput): Track!
+  createTrack(input: NewTrackInput!): Track
+  deleteTrack(id: ID!): deleteResponse
+  updateTrack(id: ID!, input: TrackInput!): Track
 }
 
 type NewTrackInput {

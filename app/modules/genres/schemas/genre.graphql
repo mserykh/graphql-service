@@ -12,9 +12,9 @@ type Query {
 }
 
 type Mutation {
-  createGenre(input: NewGenreInput): Genre!
-  deleteGenre(id: ID!): DEL
-  updateGenre(id: ID!, input: GenreInput): Genre!
+  createGenre(input: NewGenreInput!): Genre
+  deleteGenre(id: ID!): deleteResponse
+  updateGenre(id: ID!, input: GenreInput!): Genre
 }
 
 type NewGenreInput {

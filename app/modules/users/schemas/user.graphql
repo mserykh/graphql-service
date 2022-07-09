@@ -16,7 +16,7 @@ type Query {
 }
 
 type Mutation {
-  register(input: NewUserInput): User!
+  register(input: NewUserInput!): User
 }
 
 type NewUserInput {
