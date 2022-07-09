@@ -8,7 +8,7 @@ export const albumResolver = {
       { limit, offset }: { limit: number; offset: number },
       { dataSources }: any,
     ) => {
-      const res = await dataSources.albumsSource.getItems();
+      const res = await dataSources.albumsSource.getItems({ limit, offset });
       return res;
     },
     album: async (_: any, { id }: { id: string }, { dataSources }: any) => {

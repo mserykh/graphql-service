@@ -5,7 +5,7 @@ export const bandResolver = {
       return res;
     },
     band: async (_: any, id: string, { dataSources }: any) => {
-      const res = await dataSources.bandsSource.getTtem(id);
+      const res = await dataSources.bandsSource.getItem(id);
       return res;
     },
   },
