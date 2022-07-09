@@ -5,7 +5,7 @@ export const genreResolver = {
       return res;
     },
     genre: async (_: any, id: string, { dataSources }: any) => {
-      const res = await dataSources.genresSource.getTtem(id);
+      const res = await dataSources.genresSource.getItem(id);
       return res;
     },
   },

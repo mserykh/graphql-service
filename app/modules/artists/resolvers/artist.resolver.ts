@@ -5,7 +5,7 @@ export const artistResolver = {
       return res;
     },
     artist: async (_: any, id: string, { dataSources }: any) => {
-      const res = await dataSources.artistsSource.getTtem(id);
+      const res = await dataSources.artistsSource.getItem(id);
       return res;
     },
   },

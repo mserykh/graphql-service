@@ -5,7 +5,7 @@ export const trackResolver = {
       return res;
     },
     track: async (_: any, id: string, { dataSources }: any) => {
-      const res = await dataSources.tracksSource.getTtem(id);
+      const res = await dataSources.tracksSource.getItem(id);
       return res;
     },
   },
