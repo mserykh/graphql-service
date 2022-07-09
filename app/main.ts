@@ -1,12 +1,11 @@
-import { ApolloServer, gql } from 'apollo-server';
-import path from 'path';
-import { loadFilesSync } from '@graphql-tools/load-files';
-import services from './app.services';
+import { ApolloServer } from 'apollo-server';
+import { typeDefs, resolvers, services } from './app.module';
 
 const PORT = process.env.PORT || 3000;
 
 const server = new ApolloServer({
-  typeDefs: loadFilesSync(path.join(__dirname, './modules/**/*.graphql')),
+  typeDefs,
+  resolvers,
   dataSources: () => services,
 });
 

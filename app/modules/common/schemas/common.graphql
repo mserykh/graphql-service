@@ -1,4 +1,0 @@
-type deleteResponse {
-  acknowledged: Boolean
-  deletedCount: Int
-}
