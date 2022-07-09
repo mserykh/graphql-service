@@ -1,4 +1,4 @@
-export const genresResolver = {
+export const genreResolver = {
   Query: {
     genres: async (_: any, __: any, { dataSources }: any) => {
       const res = await dataSources.genresSource.getItems();
