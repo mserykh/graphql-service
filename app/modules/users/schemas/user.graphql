@@ -14,3 +14,14 @@ type Query {
   user(id: ID!): User
   jwt(email: String!, password: String!): JWT
 }
+
+type Mutation {
+  register(input: NewUserInput): User!
+}
+
+type NewUserInput {
+  firstName: String!
+  lastName: String!
+  password: String!
+  email: String!
+}

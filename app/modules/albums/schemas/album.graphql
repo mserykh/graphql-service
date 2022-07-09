@@ -13,3 +13,27 @@ type Query {
   albums(limit: Int, offset: Int): [Album]
   album(id: ID!): Album
 }
+
+type Mutation {
+  createAlbum(input: NewAlbumInput): Album!
+  deleteAlbum(id: ID!): DEL
+  updateAlbum(id: ID!, input: AlbumInput): Album!
+}
+
+type NewAlbumInput {
+  name: String!
+  released: Int
+  artistsIds: [ID]
+  bandsIds: [ID]
+  trackIds: [ID]
+  genresIds: [ID]
+}
+
+type AlbumInput {
+  name: String
+  released: Int
+  artistsIds: [ID]
+  bandsIds: [ID]
+  trackIds: [ID]
+  genresIds: [ID]
+}

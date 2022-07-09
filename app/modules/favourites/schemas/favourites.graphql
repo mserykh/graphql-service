@@ -10,3 +10,10 @@ type Favourites {
 type Query {
   Favourites: Favourites
 }
+
+type Mutation {
+  addTrackToFavourites(trackId: ID!): Favourites
+  addBandToFavourites(bandId: ID!): Favourites
+  addArtistToFavourites(artistId: ID!): Favourites
+  addGenreToFavourites(genreId: ID!): Favourites
+}
