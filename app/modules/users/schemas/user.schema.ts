@@ -15,7 +15,7 @@ export const userTypeDefs = gql`
 
   type Query {
     user(id: ID!): User
-    jwt(email: String!, password: String!): JWT
+    login(email: String!, password: String!): JWT
   }
 
   type Mutation {
