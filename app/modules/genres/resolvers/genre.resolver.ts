@@ -5,14 +5,14 @@ import { GenreInput, NewGenreInput } from '../genre.types';
 export const genreResolver = {
   Query: {
     genres: async (
-      _: any,
+      _: null,
       { limit, offset }: { limit: number; offset: number },
       { dataSources }: any,
     ) => {
       const res = await dataSources.genresSource.getItems(limit, offset);
       return res;
     },
-    genre: async (_: any, { id }: { id: string }, { dataSources }: any) => {
+    genre: async (_: null, { id }: { id: string }, { dataSources }: any) => {
       const res = await dataSources.genresSource.getItem(id);
       return res;
     },
@@ -70,6 +70,6 @@ export const genreResolver = {
   },
 
   Genre: {
-    id: (parent: { _id: string }) => parent._id,
+    id: ({ _id }: { _id: string }) => _id,
   },
 };

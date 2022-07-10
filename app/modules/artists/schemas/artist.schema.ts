@@ -20,8 +20,8 @@ export const artistTypeDefs = gql`
 
   type Mutation {
     createArtist(input: NewArtistInput!): Artist
-    deleteArtist(id: ID!): deleteResponse
     updateArtist(id: ID!, input: ArtistInput!): Artist
+    deleteArtist(id: ID!): deleteResponse
   }
 
   input NewArtistInput {

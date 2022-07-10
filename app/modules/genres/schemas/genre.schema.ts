@@ -16,8 +16,8 @@ export const genreTypeDefs = gql`
 
   type Mutation {
     createGenre(input: NewGenreInput!): Genre
-    deleteGenre(id: ID!): deleteResponse
     updateGenre(id: ID!, input: GenreInput!): Genre
+    deleteGenre(id: ID!): deleteResponse
   }
 
   input NewGenreInput {
