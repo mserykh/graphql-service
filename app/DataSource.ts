@@ -22,7 +22,7 @@ export class DataSource extends RESTDataSource {
     }
   }
 
-  async getTtem(id: string) {
+  async getItem(id: string) {
     try {
       const res = await this.get(`/${id}`);
       return { ...res, id: res._id };
