@@ -1,13 +1,19 @@
 {
   "compilerOptions": {
     "target": "es2016",
-    "module": "es6",
-    "outDir": "./dist",
+    "module": "CommonJS",
+    "rootDir": "app",
     "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "app",
     "noImplicitAny": true,
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "moduleResolution": "Node"
   },
-  "include": ["src/**/*.ts"],
+  "ts-node": {
+    "esm": true
+  },
+  "include": ["app/**/*.ts"],
   "exclude": ["node_modules"]
 }
