@@ -1,5 +1,4 @@
 import { ApolloError } from 'apollo-server';
-import { Genre } from 'types';
 import { GenreInput, NewGenreInput } from '../genre.types';
 
 export const genreResolver = {
