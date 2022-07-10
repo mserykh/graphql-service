@@ -28,13 +28,12 @@ npm install
 
 ## Running the application
 
+- Rename `.env.example` to `.env`
 - Launch the app
 
 ```bash
 npm run start:prod
 ```
-
-- Rename `.env.example` to `.env`
 
 ## Testing the application
 
