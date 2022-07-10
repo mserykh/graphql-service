@@ -82,8 +82,8 @@ export const albumResolver = {
       const res = await dataSources.genresSource.getItemsById(genresIds);
       return res;
     },
-    tracks: async ({ trackIds }: { trackIds: string[] }, _: null, { dataSources }: any) => {
-      const res = await dataSources.tracksSource.getItemsById(trackIds);
+    tracks: async ({ tracksIds }: { tracksIds: string[] }, _: null, { dataSources }: any) => {
+      const res = await dataSources.tracksSource.getItemsById(tracksIds);
       return res;
     },
   },
