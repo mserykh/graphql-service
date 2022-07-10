@@ -7,6 +7,12 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   dataSources: () => services,
+  csrfPrevention: true,
+  cache: 'bounded',
+  context: ({ req }) => {
+    const token = req.headers.authorization || '';
+    return { token };
+  },
 });
 
 server.listen({ port: PORT }).then(({ url }) => {
