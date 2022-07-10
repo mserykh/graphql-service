@@ -29,7 +29,7 @@ export class DataSource extends RESTDataSource {
   async getItem(id: string) {
     try {
       const res = await this.get(`/${id}`);
-      return { ...res, id: res._id };
+      return res;
     } catch (err) {
       const error = err as ApolloError;
       return {
@@ -57,7 +57,7 @@ export class DataSource extends RESTDataSource {
   }
 
   async getItemsById(ids: string[]) {
-    const res = await Promise.allSettled(ids.map((id) => this.getItem(id)));
+    const res = await Promise.all(ids.map((id) => this.getItem(id)));
     return res;
   }
 }
