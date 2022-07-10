@@ -11,7 +11,6 @@ export const bandTypeDefs = gql`
   }
 
   type Member {
-    id: ID!
     artist: String
     instruments: String
     years: [String]
@@ -24,8 +23,8 @@ export const bandTypeDefs = gql`
 
   type Mutation {
     createBand(input: NewBandInput!): Band
-    deleteBand(id: ID!): deleteResponse
     updateBand(id: ID!, input: BandInput!): Band
+    deleteBand(id: ID!): deleteResponse
   }
 
   input NewBandInput {

@@ -28,8 +28,9 @@ export interface Band {
 }
 
 export interface Member {
-  _id: string;
-  name: string;
+  artist: string;
+  instrument: string;
+  years: string[];
 }
 
 export interface Genre {
