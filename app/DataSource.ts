@@ -7,10 +7,10 @@ export class DataSource extends RESTDataSource {
     this.baseURL = url;
   }
 
-  async getItems() {
+  async getItems(limit = 5, offset = 0) {
     try {
-      const res = await this.get('');
-      return res;
+      const res = await this.get('', { limit, offset });
+      return res.items;
     } catch (err) {
       const error = err as ApolloError;
       return {
