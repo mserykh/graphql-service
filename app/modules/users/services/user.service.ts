@@ -1,5 +1,6 @@
 import { RESTDataSource } from 'apollo-datasource-rest';
 import { ApolloError } from 'apollo-server';
+import { NewUser } from '../user.types';
 
 class UserSource extends RESTDataSource {
   constructor(url: string) {
@@ -21,7 +22,6 @@ class UserSource extends RESTDataSource {
     }
   }
 
-  // add types
   async login(email: string, password: string) {
     try {
       const res = await this.post('/login', { email, password });
@@ -36,8 +36,7 @@ class UserSource extends RESTDataSource {
     }
   }
 
-  // add types
-  async register(input: any) {
+  async register(input: NewUser) {
     try {
       const res = await this.post('/register', { ...input });
       return res;
