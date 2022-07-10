@@ -31,7 +31,7 @@ export const artistTypeDefs = gql`
     birthDate: String
     birthPlace: String
     country: String
-    bandsIds: [ID]
+    bandsIds: [String]
     instruments: [String]
   }
 
@@ -42,7 +42,7 @@ export const artistTypeDefs = gql`
     birthDate: String
     birthPlace: String
     country: String
-    bandsIds: [ID]
+    bandsIds: [String]
     instruments: [String]
   }
 `;

@@ -32,7 +32,7 @@ export const bandTypeDefs = gql`
     origin: String
     members: [MemberInput]
     website: String
-    genresIds: [ID]
+    genresIds: [String]
   }
 
   input BandInput {
@@ -40,7 +40,7 @@ export const bandTypeDefs = gql`
     origin: String
     members: [MemberInput]
     website: String
-    genresIds: [ID]
+    genresIds: [String]
   }
 
   input MemberInput {

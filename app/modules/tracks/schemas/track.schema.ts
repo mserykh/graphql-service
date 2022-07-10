@@ -25,20 +25,20 @@ export const trackTypeDefs = gql`
   input NewTrackInput {
     title: String!
     albumId: ID
-    bandsIds: [ID]
-    artistsIds: [ID]
+    bandsIds: [String]
+    artistsIds: [String]
     duration: Int
     released: Int
-    genresIds: [ID]
+    genresIds: [String]
   }
 
   input TrackInput {
     title: String!
     albumId: ID
-    bandsIds: [ID]
-    artistsIds: [ID]
+    bandsIds: [String]
+    artistsIds: [String]
     duration: Int
     released: Int
-    genresIds: [ID]
+    genresIds: [String]
   }
 `;
