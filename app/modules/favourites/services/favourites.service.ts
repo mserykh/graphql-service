@@ -1,5 +1,6 @@
 import { RequestOptions, RESTDataSource } from 'apollo-datasource-rest';
 import { ApolloError } from 'apollo-server';
+import { FavouriteItemType } from '../favourites.types';
 
 class FavouriteSource extends RESTDataSource {
   constructor(url: string) {
@@ -14,7 +15,6 @@ class FavouriteSource extends RESTDataSource {
   async getItems() {
     try {
       const res = await this.get('/');
-      console.log(res)
       return res;
     } catch (err) {
       const error = err as ApolloError;
@@ -25,6 +25,11 @@ class FavouriteSource extends RESTDataSource {
         track: null,
       };
     }
+  }
+
+  async addItem(type: FavouriteItemType, id: string) {
+    const res = await this.put('add', { type, id });
+    return res;
   }
 }
 

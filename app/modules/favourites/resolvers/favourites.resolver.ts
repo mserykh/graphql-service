@@ -1,7 +1,28 @@
+import { FavouriteItemType } from '../favourites.types';
+
 export const favouritesResolver = {
   Query: {
     favourites: async (_: any, __: any, { dataSources }: any) => {
       const res = await dataSources.favouritesSource.getItems();
+      return res;
+    },
+  },
+
+  Mutation: {
+    addTrackToFavourites: async (_: null, { id }: { id: string }, { dataSources }: any) => {
+      const res = await dataSources.favouritesSource.addItem(FavouriteItemType.tracks, id);
+      return res;
+    },
+    addBandToFavourites: async (_: null, { id }: { id: string }, { dataSources }: any) => {
+      const res = await dataSources.favouritesSource.addItem(FavouriteItemType.bands, id);
+      return res;
+    },
+    addArtistToFavourites: async (_: null, { id }: { id: string }, { dataSources }: any) => {
+      const res = await dataSources.favouritesSource.addItem(FavouriteItemType.artists, id);
+      return res;
+    },
+    addGenreToFavourites: async (_: null, { id }: { id: string }, { dataSources }: any) => {
+      const res = await dataSources.favouritesSource.addItem(FavouriteItemType.genres, id);
       return res;
     },
   },

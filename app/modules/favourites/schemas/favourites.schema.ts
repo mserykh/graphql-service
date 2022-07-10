@@ -15,9 +15,9 @@ export const favouritesTypeDefs = gql`
   }
 
   type Mutation {
-    addTrackToFavourites(trackId: ID!): Favourites
-    addBandToFavourites(bandId: ID!): Favourites
-    addArtistToFavourites(artistId: ID!): Favourites
-    addGenreToFavourites(genreId: ID!): Favourites
+    addTrackToFavourites(id: ID!): Favourites
+    addBandToFavourites(id: ID!): Favourites
+    addArtistToFavourites(id: ID!): Favourites
+    addGenreToFavourites(id: ID!): Favourites
   }
 `;
