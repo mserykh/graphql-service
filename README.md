@@ -41,6 +41,8 @@ npm run start:prod
 - Use (http://localhost:3000) to test the GraphQl service
 - To test Mutaions and Queries add a new user and login to get a JWT token. Insert the JWT token to Headers.
 
+![Insert the JWT token to Headers](https://user-images.githubusercontent.com/61358937/178161050-d1f2c223-0651-41d1-a2cc-1d2b9299c599.png)
+
 ## Queries list
 
 - artist: get an artist by id
