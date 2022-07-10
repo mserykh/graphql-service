@@ -1,3 +1,4 @@
+import { ApolloError } from 'apollo-server';
 import { LoginInput, NewUser } from '../user.types';
 
 export const userResolver = {
@@ -13,8 +14,12 @@ export const userResolver = {
   },
 
   Mutation: {
-    register: async (_: null, { ...input }: NewUser, { dataSources }: any) => {
-      const res = await dataSources.usersSource.register(input);
+    register: async (
+      _: null,
+      { firstName, lastName, email, password }: NewUser,
+      { dataSources }: any,
+    ) => {
+      const res = await dataSources.usersSource.register(firstName, lastName, email, password);
       return res;
     },
   },

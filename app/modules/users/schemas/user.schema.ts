@@ -2,11 +2,11 @@ import { gql } from 'apollo-server';
 
 export const userTypeDefs = gql`
   type User {
-    id: ID!
+    id: ID
     firstName: String
     lastName: String
     password: String
-    email: String!
+    email: String
   }
 
   type JWT {
@@ -19,7 +19,7 @@ export const userTypeDefs = gql`
   }
 
   type Mutation {
-    register(input: NewUserInput!): User
+    register(firstName: String!, lastName: String!, email: String!, password: String!): User
   }
 
   input NewUserInput {

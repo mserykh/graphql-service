@@ -33,6 +33,7 @@
     "apollo-datasource-rest": "^3.6.1",
     "apollo-server": "^3.9.0",
     "apollo-server-types": "^3.6.1",
+    "dotenv-config": "^0.1.1",
     "graphql": "^16.5.0",
     "type-graphql": "^1.1.1"
   }

@@ -3,15 +3,14 @@ import { ApolloError } from 'apollo-server';
 import { NewUser } from '../user.types';
 
 class UserSource extends RESTDataSource {
-  constructor(url: string) {
+  constructor() {
     super();
-    this.baseURL = url;
+    this.baseURL = process.env.USERS_URL as string;
   }
 
   async getUser(id: string) {
     try {
-      const res = await this.get(`/${id}`);
-      return res;
+      return await this.get(`/${id}`);
     } catch (err) {
       const error = err as ApolloError;
       return {
@@ -24,8 +23,7 @@ class UserSource extends RESTDataSource {
 
   async login(email: string, password: string) {
     try {
-      const res = await this.post('/login', { email, password });
-      return res;
+      return await this.post('/login', { email, password });
     } catch (err) {
       const error = err as ApolloError;
       return {
@@ -36,10 +34,10 @@ class UserSource extends RESTDataSource {
     }
   }
 
-  async register(input: NewUser) {
+  async register(firstName: string, lastName: string, email: string, password: string) {
     try {
-      const res = await this.post('/register', { ...input });
-      return res;
+      const res = await this.post('/register', { firstName, lastName, email, password });
+      return { ...res, id: res._id };
     } catch (err) {
       const error = err as ApolloError;
       return {
@@ -51,4 +49,4 @@ class UserSource extends RESTDataSource {
   }
 }
 
-export const usersSource = new UserSource(process.env.USERS_URL as string);
+export const usersSource = new UserSource();
