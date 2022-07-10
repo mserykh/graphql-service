@@ -10,7 +10,8 @@ class UserSource extends RESTDataSource {
 
   async getUser(id: string) {
     try {
-      return await this.get(`/${id}`);
+      const res = await this.get(`/${id}`);
+      return res;
     } catch (err) {
       const error = err as ApolloError;
       return {
@@ -23,7 +24,8 @@ class UserSource extends RESTDataSource {
 
   async login(email: string, password: string) {
     try {
-      return await this.post('/login', { email, password });
+      const res = await this.post('/login', { email, password });
+      return res;
     } catch (err) {
       const error = err as ApolloError;
       return {
