@@ -3,7 +3,7 @@ import { gql } from 'apollo-server';
 export const favouritesTypeDefs = gql`
   type Favourites {
     id: ID!
-    userId: ID
+    userId: String
     bands: [Band]
     genres: [Genre]
     artists: [Artist]
